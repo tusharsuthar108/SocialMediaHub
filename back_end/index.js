@@ -12,7 +12,8 @@ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/social
 const app = express();
 // const PORT = 3000;
 
-app.use(express.static("../public"));
+const path = require("path");
+app.use(express.static(path.join(__dirname, "../public")));
 
 // Middleware
 app.use(cors());
